@@ -136,11 +136,9 @@ img {
   font-size: 80%;
 }
 
-.page-header__item:first-child {
+.page-header__logo {
+  display: flex;
   align-self: flex-start;
-}
-
-.page-header h1 a {
   font-family: var(--sans);
 }
 
@@ -151,6 +149,7 @@ img {
 }
 
 .page-header svg {
+  display: block;
   color: var(--go-green);
   width: 24px;
   height: 24px;
@@ -161,14 +160,8 @@ img {
   color: var(--orange);
 }
 
-.page-header__logo {
-  display: flex;
-  align-items: center;
-  justify-items: left;
-  padding-top: 0.5rem;
-}
-
 .page-header__logo img {
+  display: block;
   width: 48px;
   margin-right: 0.5rem;
 }
@@ -218,7 +211,7 @@ nav {
 
 .hamburger-button {
   cursor: pointer;
-  padding: 1rem 0 1rem 1rem;
+  padding: 0.5rem 0 1rem 1rem;
 }
 
 .hamburger-button__bar {
@@ -269,7 +262,7 @@ nav {
 .blackbox {
   padding: 1rem;
   border-radius: 10px;
-  color: cultured;
+  color: var(--cultured);
   background-color: var(--gunmetal);
   font-size: 1rem;
   line-height: 1.5;
