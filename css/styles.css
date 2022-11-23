@@ -136,15 +136,8 @@ img {
   font-size: 80%;
 }
 
-.page-header__logo {
-  display: flex;
-  align-self: flex-start;
-  font-family: var(--sans);
-}
-
 .page-header a {
   color: var(--cultured);
-  text-decoration: none;
   display: block;
 }
 
@@ -158,6 +151,16 @@ img {
 .page-header a:hover,
 .page-header svg:hover {
   color: var(--orange);
+}
+
+.page-header__logo {
+  display: flex;
+  align-self: flex-start;
+  font-family: var(--sans);
+}
+
+.page-header__logo a {
+  text-decoration: none;
 }
 
 .page-header__logo img {
@@ -188,6 +191,18 @@ nav {
   justify-content: center;
   align-items: flex-end;
   gap: 2rem;
+}
+
+.navigation-list__item {
+  text-decoration: none;
+}
+
+.navigation-list__item--active {
+  text-decoration: underline;
+}
+
+.navigation-list__item--active:hover {
+  text-decoration: underline;
 }
 
 .navigation-list--mobile {
