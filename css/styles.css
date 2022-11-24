@@ -89,40 +89,6 @@ img {
 
 /*
 ===============================================================================
-=== intro styles
-===============================================================================
- */
-
-#intro {
-  padding: 3rem 1rem 6rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#intro p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-#intro .name {
-  font-family: var(--mono);
-  font-size: 1rem;
-}
-
-.name span {
-  font-family: var(--sans);
-  font-size: 4rem;
-  color: var(--go-green);
-  display: block;
-  font-weight: 300;
-}
-
-#intro h2 {
-  font-size: 3rem;
-}
-
-/*
-===============================================================================
 === header
 ===============================================================================
  */
@@ -130,10 +96,13 @@ img {
 .page-header {
   display: flex;
   width: 100%;
+  /* justify-content: space-between; */
   align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
   padding: 1rem 1rem;
   font-family: var(--mono);
-  font-size: 80%;
+  font-size: 0.8rem;
 }
 
 .page-header a {
@@ -155,7 +124,7 @@ img {
 
 .page-header__logo {
   display: flex;
-  align-self: flex-start;
+  align-items: center;
   font-family: var(--sans);
 }
 
@@ -175,26 +144,30 @@ img {
 ===============================================================================
  */
 
-nav {
-  display: flex;
+.navbar {
+  display: none;
   flex-flow: column wrap;
-  flex-grow: 1;
   align-items: flex-end;
+  flex: 1 0 100%;
+  gap: 2rem;
+}
+
+.navbar--mobile {
+  display: flex;
 }
 
 .navigation-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  display: none;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .navigation-list__item {
   text-decoration: none;
+  font-size: 1rem;
 }
 
 .navigation-list__item--active {
@@ -203,10 +176,6 @@ nav {
 
 .navigation-list__item--active:hover {
   text-decoration: underline;
-}
-
-.navigation-list--mobile {
-  display: flex;
 }
 
 .button {
@@ -226,7 +195,7 @@ nav {
 
 .hamburger-button {
   cursor: pointer;
-  padding: 0.5rem 0 1rem 1rem;
+  margin-left: auto;
 }
 
 .hamburger-button__bar {
@@ -251,6 +220,40 @@ nav {
 
 /*
 ===============================================================================
+=== intro styles
+===============================================================================
+ */
+
+#intro {
+  padding: 3rem 1rem 6rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#intro p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#intro .name {
+  font-family: var(--mono);
+  font-size: 1rem;
+}
+
+.name span {
+  font-family: var(--sans);
+  font-size: 3rem;
+  color: var(--go-green);
+  display: block;
+  font-weight: 300;
+}
+
+#intro h2 {
+  font-size: 2rem;
+}
+
+/*
+===============================================================================
 === projects section
 ===============================================================================
  */
@@ -260,7 +263,7 @@ nav {
 }
 
 #projects h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: calc(2.5rem * 1.5);
 }
 
@@ -427,6 +430,24 @@ footer svg {
 ===============================================================================
  */
 
+@media (min-width: 412px) {
+  .page-header {
+    font-size: 1rem;
+  }
+
+  .name span {
+    font-size: 4rem;
+  }
+
+  #intro h2 {
+    font-size: 3rem;
+  }
+
+  #projects h2 {
+    font-size: 2.5rem;
+  }
+}
+
 @media (min-width: 850px) {
   .page-header {
     max-width: 1200px;
@@ -437,9 +458,11 @@ footer svg {
     padding-top: 0;
   }
 
-  nav {
+  .navbar {
+    display: flex;
     flex-direction: row;
     justify-content: right;
+    flex: auto;
   }
 
   .hamburger-button {
@@ -447,9 +470,9 @@ footer svg {
   }
 
   .navigation-list {
-    display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 2.5rem;
   }
 
   article {

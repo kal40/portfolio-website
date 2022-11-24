@@ -25,12 +25,12 @@
         </a>
       </h1>
     </div>
-    <nav class="page-header__item">
-      <div class="hamburger-button">
-        <span class="hamburger-button__bar"></span>
-        <span class="hamburger-button__bar"></span>
-        <span class="hamburger-button__bar"></span>
-      </div>
+    <div class="hamburger-button">
+      <span class="hamburger-button__bar"></span>
+      <span class="hamburger-button__bar"></span>
+      <span class="hamburger-button__bar"></span>
+    </div>
+    <nav class="navbar">
       <ul class="navigation-list" role="menubar">
         <li><a href="index.html#projects" role="menuitem"
             class="navigation-list__item navigation-list__item--active">Projects</a></li>
@@ -255,14 +255,16 @@
   </footer>
   <script>
     const hamburgerButton = document.querySelector(".hamburger-button");
-    const navigationList = document.querySelector(".navigation-list");
+    const navbar = document.querySelector(".navbar");
+
     hamburgerButton.addEventListener("click", () => {
       hamburgerButton.classList.toggle("active");
-      navigationList.classList.toggle("navigation-list--mobile");
+      navbar.classList.toggle("navbar--mobile");
     })
+
     document.querySelectorAll(".navigation-list__item").forEach(n => n.addEventListener("click", () => {
       hamburgerButton.classList.remove("active");
-      navigationList.classList.remove("navigation-list--mobile");
+      navbar.classList.remove("navbar--mobile");
     }))
   </script>
 </body>
