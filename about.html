@@ -82,7 +82,15 @@
           <li>Web development</li>
         </ul>
       </div>
-      <img src="img/karoly-lonich-profile-1.png" alt="Screenshot of the Pokedex app.">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="img/karoly-lonich-profile-1.png" alt="Karoly Lonich's profile picture." style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="img/karoly-lonich-profile-2.png" alt="Karoly Lonich's family picture." style="width:100%">
+        </div>
+      </div>
     </article>
   </section>
   <div class="gradient"></div>
@@ -132,6 +140,21 @@
       hamburgerButton.classList.remove("active");
       navbar.classList.remove("navbar--mobile");
     }))
+
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 8000);
+    }
   </script>
 </body>
 </html>

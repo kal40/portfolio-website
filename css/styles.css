@@ -426,6 +426,42 @@ footer svg {
 
 /*
 ===============================================================================
+=== slide-show
+===============================================================================
+ */
+
+.mySlides {
+  display: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  /* max-width: 1000px; */
+  /* position: relative; */
+  margin: auto;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 3.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+===============================================================================
 === media queries
 ===============================================================================
  */
@@ -488,11 +524,18 @@ footer svg {
     grid-column: 1/6;
     grid-row: 1/2;
   }
+
+  #projects .slideshow-container {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+
   .text {
     grid-column: 5/11;
     grid-row: 1/2;
     order: 2;
     text-align: right;
+    z-index: 100;
   }
   #projects ul {
     justify-content: flex-end;
